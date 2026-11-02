@@ -131,6 +131,31 @@
             "name": "arbitron_read_doc",
             "title": "Read a knowledge-base article",
             "description": "One Arbitron knowledge-base article in full, as Markdown with absolute links: the title, the summary and every section, with settings tables, steps and formulas written out."
+        },
+        {
+            "name": "arbitron_get_strategy_vocabulary",
+            "title": "Strategy rule vocabulary",
+            "description": "How a Strategy Automation rule is written for arbitron_save_my_strategy: the rule format, every signal a condition can test with its unit, whether it reads a card the strategy holds, and the universes that carry it (an open rule may only test a signal its universe carries), every action with its fields, and one complete example. Percent values are written as 0.4 for 0.4 %."
+        },
+        {
+            "name": "arbitron_get_my_strategies",
+            "title": "My automation strategies",
+            "description": "The trader's Strategy Automation strategies: mode (off, shadow = evaluated but trading nothing, live, paused, error), which cards the manage rules look after (owned = the cards the strategy opened, all_mine = also every card no strategy owns), card limit, venues, cards held, and each rule as a plain sentence. With strategy_ref, one strategy and its 30 latest activity rows, where kind shadow is what a Shadow strategy would have done."
+        },
+        {
+            "name": "arbitron_save_my_strategy",
+            "title": "Draft or rewrite a strategy",
+            "description": "Creates a Strategy Automation strategy from compact rules, or replaces every rule and setting of an existing one that is not live. The rule format is in arbitron_get_strategy_vocabulary. By default the strategy starts in Shadow: it is evaluated every few seconds like a live one and its activity shows what it would have done, but it trades nothing. Going live is a switch on the strategy in the Arbitron app, which no tool here can flip. Returns the saved strategy with each rule as a plain sentence."
+        },
+        {
+            "name": "arbitron_preview_my_strategy",
+            "title": "What my strategy matches now",
+            "description": "Runs a strategy's open rule against the market right now, live or not, without acting: the pairs it matches (top 15) with spread in percent, net APR in percent, the side it would trade, whether it would open now, and if not what blocks it (card limit, budget, a missing exchange key, a pair already held). available is false when the evaluator did not answer. Manage rules are not previewed. In Shadow their decisions show in the activity, on the cards the strategy looks after: with cards = owned that is none, because a Shadow strategy opens no real card; cards = all_mine shows them on the cards the trader already holds."
+        },
+        {
+            "name": "arbitron_set_my_strategy_mode",
+            "title": "Shadow or stop my strategy",
+            "description": "Puts a strategy that is not live into Shadow (evaluated like a live one, trading nothing, its activity shows what it would have done) or stops a Shadow strategy. A live strategy is turned on and off with its switch in the Arbitron app; this tool refuses it."
         }
     ]
 }
