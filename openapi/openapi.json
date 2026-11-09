@@ -337,7 +337,7 @@
                     "Funding"
                 ],
                 "summary": "One coin's funding across venues",
-                "description": "Every venue quoting the coin, the spread between the highest and lowest rate, and which venue pays a short or a long best right now. `strategy_url` opens the terminal's new-strategy form on that pair, short the best short venue and long the best long one, in Hold Mode; opening it creates nothing until the trader presses Start. Narrow the ranking to a venue list (`exchange`, `exclude_exchange`) or a volume floor (`min_volume_usdt`).",
+                "description": "Every venue quoting the coin, which venue pays a short or a long best right now, and the spread between the two. The ranking and `spread_pct` use each rate scaled to 8 hours (`rate_pct` \u00d7 8 / `interval_hours`), so a venue settling every hour compares with one settling every 8. `strategy_url` opens the terminal's new-strategy form on that pair, short the best short venue and long the best long one, in Hold Mode; opening it creates nothing until the trader presses Start. Narrow the ranking to a venue list (`exchange`, `exclude_exchange`) or a volume floor (`min_volume_usdt`).",
                 "operationId": "getCoinFunding",
                 "parameters": [
                     {
@@ -395,7 +395,7 @@
                                     "data": {
                                         "coin": "BTC",
                                         "venue_count": 18,
-                                        "spread_pct": 0.0176,
+                                        "spread_pct": 0.0358,
                                         "highest": {
                                             "exchange": "Mexc",
                                             "symbol": "BTC-USDT",

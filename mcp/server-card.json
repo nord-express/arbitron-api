@@ -30,7 +30,7 @@
         {
             "name": "arbitron_get_coin_funding",
             "title": "One coin's funding across venues",
-            "description": "Every venue quoting a perpetual on one coin, the spread between the highest and lowest funding rate, which venue currently pays a short best (highest rate) and which pays a long best (lowest rate), and the venues that only quote an inverse contract. Rates are percent per funding settlement (0.01 = 1 basis point); apr_pct is the annualised carry net of costs. strategy_url opens a funding strategy on that pair in the Arbitron terminal, short the best short venue and long the best long one, in Hold Mode, with the form filled in; it creates nothing until the trader presses Start there. Narrow the ranking to a venue list or a volume floor. Unknown tickers return suggestions."
+            "description": "Every venue quoting a perpetual on one coin, which venue currently pays a short best and which pays a long best, the spread between those two, and the venues that only quote an inverse contract. The ranking and spread_pct use each rate scaled to 8 hours (rate_pct \u00d7 8 / interval_hours), so a venue settling every hour compares with one settling every 8. Rates are percent per funding settlement (0.01 = 1 basis point); apr_pct is the annualised carry net of costs. strategy_url opens a funding strategy on that pair in the Arbitron terminal, short the best short venue and long the best long one, in Hold Mode, with the form filled in; it creates nothing until the trader presses Start there. Narrow the ranking to a venue list or a volume floor. Unknown tickers return suggestions."
         },
         {
             "name": "arbitron_get_funding_history",
